@@ -101,11 +101,25 @@ with st.form('Single Prediction', clear_on_submit=True):
         small_nodules_list = ', '.join(small_nodules)
 
         calcified_nodules_list = ', '.join(calcified_nodules)
-
-        input_data = np.array([treatment_status, hain_rifampicin, social_risk_factor_list,
-                               rater_occupation, pleural_effusion_percent, regimen_drug_list, gene_name_list,
-                               hain_isoniazid, small_nodules_list, calcified_nodules_list])
-        input_data = input_data.reshape(1, -1)
+        
+        input_data = {
+            'treatment_status': treatment_status,
+            'hain_rifampicin': hain_rifampicin,
+            'social_risk_factors': social_risk_factor_list,
+            'rater': rater_occupation,
+            'pleural_effusion_percent_of_hemithorax_involved': pleural_effusion_percent,
+            'regimen_drug': regimen_drug_list,
+            'gene_name': gene_name_list,
+            'hain_isoniazid': hain_isoniazid,
+            'smallnodules': small_nodules_list,
+            'isanynoncalcifiednoduleexist': alcified_nodules_list
+        }
+        
+        df = pd.DataFrame(input_data)
+#         input_data = np.array([treatment_status, hain_rifampicin, social_risk_factor_list,
+#                                rater_occupation, pleural_effusion_percent, regimen_drug_list, gene_name_list,
+#                                hain_isoniazid, small_nodules_list, calcified_nodules_list])
+#         input_data = input_data.reshape(1, -1)
 
         lr_model = pickle.load(open(
             'lr_model.pkl',
@@ -114,10 +128,10 @@ with st.form('Single Prediction', clear_on_submit=True):
         encoder = pickle.load(open('encoder.pkl', 'rb'))
         scaler = pickle.load(open('scaler.pkl', 'rb'))
         
-        input_data = encoder.transform(input_data)
-        input_data = scaler.transform(input_data)
+        input_data = encoder.transform(df)
+        input_data = scaler.transform(df)
         
-        result = lr_model.predict(input_data)
+        result = lr_model.predict(df)
         
         st.write(result)
 
