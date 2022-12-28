@@ -103,16 +103,16 @@ with st.form('Single Prediction', clear_on_submit=True):
         calcified_nodules_list = ', '.join(calcified_nodules)
         
         input_data = {
-            'treatment_status': treatment_status,
-            'hain_rifampicin': hain_rifampicin,
-            'social_risk_factors': social_risk_factor_list,
-            'rater': rater_occupation,
-            'pleural_effusion_percent_of_hemithorax_involved': pleural_effusion_percent,
-            'regimen_drug': regimen_drug_list,
-            'gene_name': gene_name_list,
-            'hain_isoniazid': hain_isoniazid,
-            'smallnodules': small_nodules_list,
-            'isanynoncalcifiednoduleexist': calcified_nodules_list
+            'treatment_status': [treatment_status],
+            'hain_rifampicin': [hain_rifampicin],
+            'social_risk_factors': [social_risk_factor_list],
+            'rater': [rater_occupation],
+            'pleural_effusion_percent_of_hemithorax_involved': [pleural_effusion_percent],
+            'regimen_drug': [regimen_drug_list],
+            'gene_name': [gene_name_list],
+            'hain_isoniazid': [hain_isoniazid],
+            'smallnodules': [small_nodules_list],
+            'isanynoncalcifiednoduleexist': [calcified_nodules_list]
         }
         
         df = pd.DataFrame(input_data)
