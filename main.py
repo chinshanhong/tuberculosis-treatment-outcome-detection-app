@@ -128,10 +128,10 @@ with st.form('Single Prediction', clear_on_submit=True):
         encoder = pickle.load(open('encoder.pkl', 'rb'))
         scaler = pickle.load(open('scaler.pkl', 'rb'))
         
-#         input_data = encoder.transform(df)
-#         input_data = scaler.transform(df)
+        input_data = encoder.transform(df)
+        input_data = scaler.transform(df)
         
-#         result = lr_model.predict(df)
+        result = lr_model.predict(df)
         
         st.write(df)
 
