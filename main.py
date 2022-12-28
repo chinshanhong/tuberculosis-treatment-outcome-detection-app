@@ -133,6 +133,6 @@ with st.form('Single Prediction', clear_on_submit=True):
         
         result = lr_model.predict(df)
         
-        st.write(df)
+        st.write(result)
 
 
