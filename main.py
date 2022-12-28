@@ -112,7 +112,7 @@ with st.form('Single Prediction', clear_on_submit=True):
             'gene_name': gene_name_list,
             'hain_isoniazid': hain_isoniazid,
             'smallnodules': small_nodules_list,
-            'isanynoncalcifiednoduleexist': alcified_nodules_list
+            'isanynoncalcifiednoduleexist': calcified_nodules_list
         }
         
         df = pd.DataFrame(input_data)
