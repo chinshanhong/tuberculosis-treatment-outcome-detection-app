@@ -1,1 +1,2 @@
 scikit-learn==1.2.0
+category-encoders==2.5.1.post0
