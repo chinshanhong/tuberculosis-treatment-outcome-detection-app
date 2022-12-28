@@ -110,5 +110,15 @@ with st.form('Single Prediction', clear_on_submit=True):
         lr_model = pickle.load(open(
             'lr_model.pkl',
             'rb'))
+        
+        encoder = pickle.load(open('encoder.pkl', 'rb'))
+        scaler = pickle.load(open('scaler.pkl', 'rb'))
+        
+        input_data = encoder.transform(input_data)
+        input_data = scaler.transform(input_data)
+        
+        result = lr_model.predict(input_data)
+        
+        st.write(result)
 
 
