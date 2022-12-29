@@ -168,4 +168,8 @@ with col3:
         st.image(image_path, width=200)
 
 with col4:
-    st.header(st.session_state.treatment_outcome)
+    if st.session_state.result == 0:
+        st.header(f':green[{st.session_state.treatment_outcome}]')
+
+
+
