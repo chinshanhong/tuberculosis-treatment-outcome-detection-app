@@ -24,7 +24,7 @@ with st.form('Single Prediction', clear_on_submit=True):
         # First widget to get the input of rater occupation
         rater_occupation = st.selectbox(
             'Please select your occupation',
-            ['Radiologist', 'General practitioner', 'Other', 'Not reported']
+            ['Radiologist', 'General practitioner', 'Other', 'Not Reported']
         )
 
         # Second widget to get the treatment status of TB patient
@@ -33,15 +33,15 @@ with st.form('Single Prediction', clear_on_submit=True):
                                             'Treatment ineffective due to additional resistance',
                                             'Patient stopped treatment', 'Terminated from study',
                                             'New drugs available', 'Drug(s) no longer available',
-                                            'Adverse event', 'Not reported'])
+                                            'Adverse event', 'Not Reported'])
 
         # Third widget to select the risk factors that the TB patient currently having
         risk_factors = st.multiselect('Please select all the risk factors that your patient exhibit',
                                         ['Current smoker', 'Documented MDR contact', 'Patient alcohol abuse',
                                         'Ex prisoner', 'TB care worker', 'Homeless', 'Worked abroad',
                                         'Patient drug abuse', 'Immigrants', 'Refugees', 'Internal migrants',
-                                        'Not reported'],
-                                        ['Not reported'])
+                                        'Not Reported'],
+                                        ['Not Reported'])
 
         # Fourth widget to select the pleural effusion percent of hemithorax involved
         pleural_effusion_percent = st.selectbox('Please select the pleural effusion percent of hemithorax',
@@ -170,6 +170,7 @@ with col3:
 with col4:
     if st.session_state.result == 0:
         st.header(f':green[{st.session_state.treatment_outcome}]')
-
-
-
+    elif st.session_state.result == 1:
+        st.header(f':red[{st.session_state.treatment_outcome}]')
+    elif st.session_state.result == 2:
+        st.header(f'{st.session_state.treatment_outcome}')
