@@ -153,12 +153,13 @@ with st.form('Single Prediction', clear_on_submit=True):
 
 st.subheader("Detection Result")
 
-if st.session_state.result == 0:
-    st.image('cured.png', width=200)
-    st.write(st.session_state.treatment_outcome)
-elif st.session_state.result == 1:
-    st.image('died.png', width=200)
-    st.write(st.session_state.treatment_outcome)
-elif st.session_state.result == 2:
-    st.image('unknown.png', width=200)
-    st.write(st.session_state.treatment_outcome)
+with st.container():
+    if st.session_state.result == 0:
+        st.image('cured.png', width=200)
+        st.write(st.session_state.treatment_outcome)
+    elif st.session_state.result == 1:
+        st.image('died.png', width=200)
+        st.write(st.session_state.treatment_outcome)
+    elif st.session_state.result == 2:
+        st.image('unknown.png', width=200)
+        st.write(st.session_state.treatment_outcome)
