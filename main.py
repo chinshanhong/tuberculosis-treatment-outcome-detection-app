@@ -135,4 +135,8 @@ with col1:
 
             st.write(result)
 
+with col2:
+    st.write('Hello')
+            
+
 
