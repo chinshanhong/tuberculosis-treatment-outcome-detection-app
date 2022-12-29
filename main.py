@@ -10,7 +10,7 @@ import pickle
 st.title("Tuberculosis Treatment Outcomes Detector")
 
 col1, col2 = st.columns([2,1])
-col3, col4 = st.columns()
+col3, col4 = st.columns(2)
 
 with col1:
 
