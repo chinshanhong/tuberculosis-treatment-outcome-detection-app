@@ -9,14 +9,13 @@ import pickle
 
 st.title("Tuberculosis Treatment Outcomes Detector")
 
-col1, col2 = st.columns([2,1])
-col3, col4 = st.columns(2)
+col1, col2 = st.columns(2)
 
-with col1:
+
 
     with st.form('Single Prediction', clear_on_submit=True):
         
-        with col3:
+        with col1:
         
             # First widget to get the input of rater occupation
             rater_occupation = st.selectbox(
@@ -57,7 +56,7 @@ with col1:
                                            'Antiretroviral therapy', 'Cotrimoxazol preventive', 'Clarithromycin',
                                            'Fluoroquinolones', 'Not Reported'], ['Not Reported'])
             
-        with col4:
+        with col2:
             
             # Sixth widget to select the location of small nodules that the patient is taking
             small_nodules = st.multiselect('Does small nodules exist?',
@@ -141,8 +140,6 @@ with col1:
 
             st.write(result)
 
-with col2:
-    st.write('Hello')
             
 
 
