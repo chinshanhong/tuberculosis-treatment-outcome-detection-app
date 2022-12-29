@@ -137,7 +137,6 @@ with st.form('Single Prediction', clear_on_submit=True):
         df = scaler.transform(df)
 
         result = lr_model.predict(df)
-        st.write(result)
 
         if result == 0:
             st.session_state.result = 0
