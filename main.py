@@ -13,7 +13,7 @@ if 'result' not in st.session_state:
     st.session_state.result = 100
 
 if 'treatment_outcome' not in st.session_state:
-    st.session_state.treatment_outcome = 'Hold'
+    st.session_state.treatment_outcome = ''
 
 st.title("Tuberculosis Treatment Outcomes Detector")
 
@@ -166,9 +166,6 @@ with col3:
     elif st.session_state.result == 2:
         image_path = 'unknown.png'
         st.image(image_path, width=200)
-    
+
 with col4:
-    st.write(st.session_state.treatment_outcome)
-
-
-
+    st.header(st.session_state.treatment_outcome)
