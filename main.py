@@ -10,83 +10,89 @@ import pickle
 st.title("Tuberculosis Treatment Outcomes Detector")
 
 col1, col2 = st.columns([2,1])
+col3, col4 = st.columns()
 
 with col1:
 
     with st.form('Single Prediction', clear_on_submit=True):
-        # First widget to get the input of rater occupation
-        rater_occupation = st.selectbox(
-            'Please select your occupation',
-            ['Radiologist', 'General practitioner', 'Other', 'Not reported']
-        )
+        
+        with col3:
+        
+            # First widget to get the input of rater occupation
+            rater_occupation = st.selectbox(
+                'Please select your occupation',
+                ['Radiologist', 'General practitioner', 'Other', 'Not reported']
+            )
 
-        # Second widget to get the treatment status of TB patient
-        treatment_status = st.selectbox("Please select your patient's treatment status",
-                                        ['Treatment ended', 'Continuation of Treatment',
-                                         'Treatment ineffective due to additional resistance',
-                                         'Patient stopped treatment', 'Terminated from study',
-                                         'New drugs available', 'Drug(s) no longer available',
-                                         'Adverse event', 'Not reported'])
+            # Second widget to get the treatment status of TB patient
+            treatment_status = st.selectbox("Please select your patient's treatment status",
+                                            ['Treatment ended', 'Continuation of Treatment',
+                                             'Treatment ineffective due to additional resistance',
+                                             'Patient stopped treatment', 'Terminated from study',
+                                             'New drugs available', 'Drug(s) no longer available',
+                                             'Adverse event', 'Not reported'])
 
-        # Third widget to select the risk factors that the TB patient currently having
-        risk_factors = st.multiselect('Please select all the risk factors that your patient exhibit',
-                                      ['Current smoker', 'Documented MDR contact', 'Patient alcohol abuse',
-                                       'Ex prisoner', 'TB care worker', 'Homeless', 'Worked abroad',
-                                       'Patient drug abuse', 'Immigrants', 'Refugees', 'Internal migrants', 'Not reported'],
-                                      ['Not reported'])
+            # Third widget to select the risk factors that the TB patient currently having
+            risk_factors = st.multiselect('Please select all the risk factors that your patient exhibit',
+                                          ['Current smoker', 'Documented MDR contact', 'Patient alcohol abuse',
+                                           'Ex prisoner', 'TB care worker', 'Homeless', 'Worked abroad',
+                                           'Patient drug abuse', 'Immigrants', 'Refugees', 'Internal migrants', 'Not reported'],
+                                          ['Not reported'])
 
-        # Fourth widget to select the pleural effusion percent of hemithorax involved
-        pleural_effusion_percent = st.selectbox('Please select the pleural effusion percent of hemithorax involved',
-                                                ['Less than 50', '0',
-                                                 'Greater than or equal to 50',
-                                                 'Not Reported'])
+            # Fourth widget to select the pleural effusion percent of hemithorax involved
+            pleural_effusion_percent = st.selectbox('Please select the pleural effusion percent of hemithorax involved',
+                                                    ['Less than 50', '0',
+                                                     'Greater than or equal to 50',
+                                                     'Not Reported'])
 
-        # Fifth widget to select the drug regimen that the patient is taking
-        drug_regimen = st.multiselect('Please select the drug regimen that your patient is taking',
-                                      ['Bedaquiline', 'Clofazimine', 'Cycloserine', 'Levofloxacin',
-                                       'Linezolid', 'Capreomycin', 'p-aminosalicylic acid',
-                                       'Prothionamide', 'Ethambutol', 'Kanamycin', 'Pyrazinamide',
-                                       'Rifampicin', 'Amoxicillin-clavulanate', 'Delamanid',
-                                       'Imipenem-cilastatin', 'Isoniazid', 'Streptomycin',
-                                       'Moxifloxacin', 'Pretomanid', 'Aminoglycosides - injectible agents',
-                                       'Ofloxacin', 'Amikacin', 'Ethionamide', 'Terizidone',
-                                       'Antiretroviral therapy', 'Cotrimoxazol preventive', 'Clarithromycin',
-                                       'Fluoroquinolones', 'Not Reported'], ['Not Reported'])
-
-        # Sixth widget to select the location of small nodules that the patient is taking
-        small_nodules = st.multiselect('Does small nodules exist?',
-                                           ['Lower Left Sextant-Yes', 'Lower Left Sextant-No', 'Lower Right Sextant-Yes',
-                                            'Middle Left Sextant-Yes', 'Middle Right Sextant-Yes', 'Upper Left Sextant-Yes',
-                                            'Upper Right Sextant-Yes', 'Middle Left Sextant-No', 'Middle Right Sextant-No',
-                                            'Upper Left Sextant-No', 'Upper Right Sextant-No', 'Lower Right Sextant-No',
-                                            'None', 'Not Reported'],
-                                       ['Not Reported'])
-
-        # Seventh widget to select the location of small nodules that the patient is taking
-        calcified_nodules = st.multiselect('Does calcified nodules exist?', 
-                                              ['Lower Left Sextant-Yes', 'Lower Left Sextant-No',
-                                                'Lower Right Sextant-Yes',
-                                                'Middle Left Sextant-Yes', 'Middle Right Sextant-Yes',
-                                                'Upper Left Sextant-Yes',
-                                                'Upper Right Sextant-Yes', 'Middle Left Sextant-No',
-                                                'Middle Right Sextant-No',
+            # Fifth widget to select the drug regimen that the patient is taking
+            drug_regimen = st.multiselect('Please select the drug regimen that your patient is taking',
+                                          ['Bedaquiline', 'Clofazimine', 'Cycloserine', 'Levofloxacin',
+                                           'Linezolid', 'Capreomycin', 'p-aminosalicylic acid',
+                                           'Prothionamide', 'Ethambutol', 'Kanamycin', 'Pyrazinamide',
+                                           'Rifampicin', 'Amoxicillin-clavulanate', 'Delamanid',
+                                           'Imipenem-cilastatin', 'Isoniazid', 'Streptomycin',
+                                           'Moxifloxacin', 'Pretomanid', 'Aminoglycosides - injectible agents',
+                                           'Ofloxacin', 'Amikacin', 'Ethionamide', 'Terizidone',
+                                           'Antiretroviral therapy', 'Cotrimoxazol preventive', 'Clarithromycin',
+                                           'Fluoroquinolones', 'Not Reported'], ['Not Reported'])
+            
+        with col4:
+            
+            # Sixth widget to select the location of small nodules that the patient is taking
+            small_nodules = st.multiselect('Does small nodules exist?',
+                                               ['Lower Left Sextant-Yes', 'Lower Left Sextant-No', 'Lower Right Sextant-Yes',
+                                                'Middle Left Sextant-Yes', 'Middle Right Sextant-Yes', 'Upper Left Sextant-Yes',
+                                                'Upper Right Sextant-Yes', 'Middle Left Sextant-No', 'Middle Right Sextant-No',
                                                 'Upper Left Sextant-No', 'Upper Right Sextant-No', 'Lower Right Sextant-No',
                                                 'None', 'Not Reported'],
                                            ['Not Reported'])
 
-        # Eight widget to select the gene name
-        gene_name = st.multiselect('Please select your patient genomic sequence',
-                                       ['katG', 'rpoB', 'rpsL', 'embB', 'inhA-Pro',
-                                        'gyrA', 'rrs', 'pncA', 'inhA', 'Not Reported'],
-                                   ['Not Reported'])
+            # Seventh widget to select the location of small nodules that the patient is taking
+            calcified_nodules = st.multiselect('Does calcified nodules exist?', 
+                                                  ['Lower Left Sextant-Yes', 'Lower Left Sextant-No',
+                                                    'Lower Right Sextant-Yes',
+                                                    'Middle Left Sextant-Yes', 'Middle Right Sextant-Yes',
+                                                    'Upper Left Sextant-Yes',
+                                                    'Upper Right Sextant-Yes', 'Middle Left Sextant-No',
+                                                    'Middle Right Sextant-No',
+                                                    'Upper Left Sextant-No', 'Upper Right Sextant-No', 'Lower Right Sextant-No',
+                                                    'None', 'Not Reported'],
+                                               ['Not Reported'])
 
-        # Ninth widget to select the result of drug sensitivity test
-        hain_rifampicin = st.selectbox('Please select the drug sensitivity test result of rifampicin',
-                                           ['Resistant', 'Sensitive', 'Not Reported'])
+            # Eight widget to select the gene name
+            gene_name = st.multiselect('Please select your patient genomic sequence',
+                                           ['katG', 'rpoB', 'rpsL', 'embB', 'inhA-Pro',
+                                            'gyrA', 'rrs', 'pncA', 'inhA', 'Not Reported'],
+                                       ['Not Reported'])
 
-        # Tenth widget to select the result of drug sensitivity test
-        hain_isoniazid = st.selectbox('Please select the drug sensitivity test result of isoniazid',
-                                      ['Resistant', 'Sensitive', 'Intermediate', 'Not Reported'])
+            # Ninth widget to select the result of drug sensitivity test
+            hain_rifampicin = st.selectbox('Please select the drug sensitivity test result of rifampicin',
+                                               ['Resistant', 'Sensitive', 'Not Reported'])
+
+            # Tenth widget to select the result of drug sensitivity test
+            hain_isoniazid = st.selectbox('Please select the drug sensitivity test result of isoniazid',
+                                          ['Resistant', 'Sensitive', 'Intermediate', 'Not Reported'])
 
         submitted = st.form_submit_button("Predict")
 
