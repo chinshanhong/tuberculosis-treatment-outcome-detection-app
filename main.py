@@ -137,7 +137,6 @@ with st.form('Single Prediction', clear_on_submit=True):
         df = scaler.transform(df)
 
         result = lr_model.predict(df)
-        st.write(st.session_state)
 
         if result == 0:
             st.session_state.result = 0
@@ -156,18 +155,10 @@ st.subheader("Detection Result")
 
 if st.session_state.result == 0:
     st.image('cured.png', width=200)
-    st.write(st.session_state.result)
+    st.write(st.session_state.treatment_outcome)
 elif st.session_state.result == 1:
     st.image('died.png', width=200)
-    st.write(st.session_state.result)
+    st.write(st.session_state.treatment_outcome)
 elif st.session_state.result == 2:
     st.image('unknown.png', width=200)
-    st.write(st.session_state.result)
-
-
-
-    
-
-
-
-
+    st.write(st.session_state.treatment_outcome)
