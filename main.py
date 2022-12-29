@@ -152,28 +152,30 @@ with tab1:
                 st.session_state.result = 2
                 st.session_state.treatment_outcome = 'Unknown'
 
-    with st.container():
-        
-        st.subheader("Detection Result")
-        image_path = ''
-        outcome = ''
-        col3, col4 = st.columns(2)
-    
-        with col3:
-            if st.session_state.result == 0:
-                image_path = 'cured.png'
-                st.image(image_path, width=200)
-            elif st.session_state.result == 1:
-                image_path = 'died.png'
-                st.image(image_path, width=200)
-            elif st.session_state.result == 2:
-                image_path = 'unknown.png'
-                st.image(image_path, width=200)
-    
-        with col4:
-            if st.session_state.result == 0:
-                st.header(f':green[{st.session_state.treatment_outcome}]')
-            elif st.session_state.result == 1:
-                st.header(f':red[{st.session_state.treatment_outcome}]')
-            elif st.session_state.result == 2:
-                st.header(f'{st.session_state.treatment_outcome}')
+
+    st.subheader("Detection Result")
+    image_path = ''
+    outcome = ''
+    col3, col4 = st.columns(2)
+
+    with col3:
+        if st.session_state.result == 0:
+            image_path = 'cured.png'
+            st.image(image_path, width=200)
+        elif st.session_state.result == 1:
+            image_path = 'died.png'
+            st.image(image_path, width=200)
+        elif st.session_state.result == 2:
+            image_path = 'unknown.png'
+            st.image(image_path, width=200)
+
+    with col4:
+        if st.session_state.result == 0:
+            st.header(f':green[{st.session_state.treatment_outcome}]')
+        elif st.session_state.result == 1:
+            st.header(f':red[{st.session_state.treatment_outcome}]')
+        elif st.session_state.result == 2:
+            st.header(f'{st.session_state.treatment_outcome}')
+
+
+
