@@ -153,7 +153,7 @@ with tab1:
                 st.session_state.treatment_outcome = 'Unknown'
 
 
-    st.write("Detection Result")
+    st.subheader("Detection Result")
     image_path = ''
     outcome = ''
     col3, col4 = st.columns(2)
