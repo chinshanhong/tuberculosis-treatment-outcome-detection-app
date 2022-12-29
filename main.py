@@ -152,14 +152,23 @@ with st.form('Single Prediction', clear_on_submit=True):
 
 
 st.subheader("Detection Result")
+image_path = ''
+outcome = ''
+col3, col4 = st.columns(2)
 
-with st.container():
+with col3:
     if st.session_state.result == 0:
-        st.image('cured.png', width=200)
-        st.write(st.session_state.treatment_outcome)
+        image_path = 'cured.png'
+        st.image(image_path, width=200)
     elif st.session_state.result == 1:
-        st.image('died.png', width=200)
-        st.write(st.session_state.treatment_outcome)
+        image_path = 'died.png'
+        st.image(image_path, width=200)
     elif st.session_state.result == 2:
-        st.image('unknown.png', width=200)
-        st.write(st.session_state.treatment_outcome)
+        image_path = 'unknown.png'
+        st.image(image_path, width=200)
+    
+with col4:
+    st.write(st.session_state.treatment_outcome)
+
+
+
