@@ -39,7 +39,7 @@ with st.form('Single Prediction', clear_on_submit=True):
         risk_factors = st.multiselect('Please select all the risk factors that your patient exhibit',
                                       ['Current smoker', 'Documented MDR contact', 'Patient alcohol abuse',
                                        'Ex prisoner', 'TB care worker', 'Homeless', 'Worked abroad',
-                                       'Patient drug abuse', 'Immigrants', 'Refugees', 'Internal migrants',
+                                       'Patient drug abuse', 'Immigrants', 'refugees', 'internal migrants',
                                        'Not Reported'],
                                       ['Not Reported'])
 
