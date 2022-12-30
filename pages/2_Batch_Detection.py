@@ -13,8 +13,10 @@ input_data = None;
 st.title('Batch Detection')
 
 def detect(input_data):
-    if input_data == None:
+    if input_data is None:
         st.error("Please submit a CSV file before detection")
+    else:
+        st.write(input_data)
         
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
