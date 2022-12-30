@@ -40,6 +40,7 @@ def detect(data):
         result = lr_model.predict(input_data)
         
         output_data = data.assign(Outcome=result)
+        output_data['Outcome'] = output_data['Outcome'].map({0 : 'Cured', 1 : 'Died', 2 : 'Unknown'})
         
 #         output_data = input_data.assign(Outcome=[result])
 
