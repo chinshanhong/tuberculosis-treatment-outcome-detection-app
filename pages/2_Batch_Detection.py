@@ -16,7 +16,19 @@ def detect(input_data):
     if input_data is None:
         st.error("Please submit a CSV file before detection")
     else:
-        st.write(input_data)
+        lr_model = pickle.load(open(
+            'lr_model.pkl',
+            'rb'))
+
+        encoder = pickle.load(open('encoder.pkl', 'rb'))
+        scaler = pickle.load(open('scaler.pkl', 'rb'))
+
+        input_data = encoder.transform(input_data)
+        input_data = scaler.transform(input_data)
+
+        result = lr_model.predict(input_data)
+        
+        st.write(result)
         
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
