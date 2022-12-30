@@ -36,8 +36,11 @@ def detect(input_data):
         input_data = scaler.transform(input_data)
 
         result = lr_model.predict(input_data)
+        
+        output_data = input_data
+        output_data['Outcome'] = result
 
-        st.write(result)
+        st.write(output_data)
 
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
