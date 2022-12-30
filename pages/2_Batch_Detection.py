@@ -22,6 +22,8 @@ def detect(data):
     if data is None:
         st.error("Please submit a CSV file before detection")
     else:
+        st.write("##Detection Results Preview")
+        
         lr_model = pickle.load(open(
             'lr_model.pkl',
             'rb'))
