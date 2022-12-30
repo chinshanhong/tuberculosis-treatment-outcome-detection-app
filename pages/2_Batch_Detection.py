@@ -13,7 +13,7 @@ st.set_page_config(
     layout='centered'
 )
 
-input_data = None;
+data = None;
 
 st.title('Batch Detection')
 
