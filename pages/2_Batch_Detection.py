@@ -43,6 +43,8 @@ def detect(data):
         
         output_data = data.assign(Outcome=result)
         output_data['Outcome'] = output_data['Outcome'].map({0 : 'Cured', 1 : 'Died', 2 : 'Unknown'})
+        
+        st.write(output_data)
        
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
