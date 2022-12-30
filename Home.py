@@ -6,7 +6,7 @@ st.set_page_config(
 )
 
 
-st.write("Tuberculosis Treatment Outcomes Detector")
+st.header("Tuberculosis Treatment Outcomes Detector")
 
 st.sidebar.success("Select a demo above.")
 
