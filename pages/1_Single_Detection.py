@@ -127,11 +127,11 @@ with st.form('Single Prediction', clear_on_submit=True):
         df = pd.DataFrame(input_data)
 
         lr_model = pickle.load(open(
-            'tuberculosis-treatment-outcome-detection-app/lr_model.pkl',
+            'lr_model.pkl',
             'rb'))
 
-        encoder = pickle.load(open('tuberculosis-treatment-outcome-detection-app/encoder.pkl', 'rb'))
-        scaler = pickle.load(open('tuberculosis-treatment-outcome-detection-app/scaler.pkl', 'rb'))
+        encoder = pickle.load(open('encoder.pkl', 'rb'))
+        scaler = pickle.load(open('scaler.pkl', 'rb'))
 
         df = encoder.transform(df)
         df = scaler.transform(df)
