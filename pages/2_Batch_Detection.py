@@ -36,8 +36,10 @@ def detect(input_data):
         input_data = scaler.transform(input_data)
 
         result = lr_model.predict(input_data)
+        st.write(input_data)
+        st.write(result)
         
-        output_data = input_data.assign(Outcome=[result])
+#         output_data = input_data.assign(Outcome=[result])
 
         st.write(output_data)
 
