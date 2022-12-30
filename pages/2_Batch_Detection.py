@@ -56,7 +56,7 @@ def detect(data):
         )
         
 def convert_df(df):
-    return df.to_csv().encode('utf-8')
+    return df.to_csv(index=False)
        
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
