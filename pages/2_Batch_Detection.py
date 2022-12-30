@@ -8,6 +8,8 @@ st.set_page_config(
     layout='centered'
 )
 
+input_data = None;
+
 st.title('Batch Detection')
 
 def detect(input_data):
@@ -16,7 +18,6 @@ def detect(input_data):
         
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
-input_data = None;
 
 if csv_file is not None:
     input_data = pd.read_csv(csv_file)
