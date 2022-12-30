@@ -4,8 +4,8 @@ import numpy as np
 import pickle
 
 st.set_page_config(
-    page_title='Batch Detection',
+    page_title='Tuberculosis Treatment Outcomes Detector',
     layout='centered'
 )
 
-st.write('Hello')
+st.title('Batch Detection')
