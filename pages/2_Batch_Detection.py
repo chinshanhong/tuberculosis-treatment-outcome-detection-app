@@ -10,8 +10,10 @@ st.set_page_config(
 
 st.title('Batch Detection')
 
-def predict(input_data):
-    st.write("Hello")
+def detect(input_data):
+    if input_data == None:
+        st.error("Please submit a CSV file before detection")
+        
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
 input_data = None;
@@ -19,6 +21,8 @@ input_data = None;
 if csv_file is not None:
     input_data = pd.read_csv(csv_file)
 
-if st.button('Predict', on_click=predict(input_data)):
+if st.button('Predict'):
+    detect(input_data)
+    
     
 
