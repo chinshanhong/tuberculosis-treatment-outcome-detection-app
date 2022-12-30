@@ -9,3 +9,8 @@ st.set_page_config(
 )
 
 st.title('Batch Detection')
+
+csv_file = st.file_uploader("Choose a CSV file", type='csv')
+if csv_file is not None:
+    input_data = pd.read_csv(csv_file)
+    st.write(input_data)
