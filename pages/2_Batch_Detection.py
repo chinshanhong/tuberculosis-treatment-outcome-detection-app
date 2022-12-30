@@ -19,5 +19,5 @@ input_data = None;
 if csv_file is not None:
     input_data = pd.read_csv(csv_file)
 
-if st.button('Predict', on_click=predict(input_data)
+if st.button('Predict', on_click=predict(input_data))
 
