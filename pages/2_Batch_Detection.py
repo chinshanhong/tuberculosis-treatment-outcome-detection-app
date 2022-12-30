@@ -37,8 +37,7 @@ def detect(input_data):
 
         result = lr_model.predict(input_data)
         
-        output_data = input_data
-        output_data['Outcome'] = result
+        output_data = input_data.assign(Outcome=[result])
 
         st.write(output_data)
 
