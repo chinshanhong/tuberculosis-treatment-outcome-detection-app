@@ -7,7 +7,7 @@ import pickle
 # from sklearn.linear_model import LogisticRegression
 # from category_encoders import CountEncoder
 
-st.set_page_config(layout="centered", page_title='Single Detection')
+st.set_page_config(layout="centered", page_title='Tuberculosis Treatment Outcomes Detector')
 
 if 'result' not in st.session_state:
     st.session_state.result = 100
@@ -15,7 +15,7 @@ if 'result' not in st.session_state:
 if 'treatment_outcome' not in st.session_state:
     st.session_state.treatment_outcome = ''
 
-st.title("Tuberculosis Treatment Outcomes Detector")
+st.title("Single Detection")
 
 col1, col2 = st.columns(2, gap='small')
 
