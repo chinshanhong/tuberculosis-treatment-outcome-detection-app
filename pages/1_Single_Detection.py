@@ -156,13 +156,13 @@ col3, col4 = st.columns(2)
 
 with col3:
     if st.session_state.result == 0:
-        image_path = '../cured.png'
+        image_path = 'cured.png'
         st.image(image_path, width=200)
     elif st.session_state.result == 1:
-        image_path = '../died.png'
+        image_path = 'died.png'
         st.image(image_path, width=200)
     elif st.session_state.result == 2:
-        image_path = '../unknown.png'
+        image_path = 'unknown.png'
         st.image(image_path, width=200)
 
 with col4:
