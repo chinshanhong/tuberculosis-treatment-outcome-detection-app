@@ -52,7 +52,7 @@ def detect(data):
             label='Download result as CSV',
             data=csv,
             file_name='Detection Result',
-            mime='text/csv'
+            mime='csv'
         )
         
 def convert_df(df):
