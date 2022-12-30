@@ -18,8 +18,8 @@ input_data = None;
 st.title('Batch Detection')
 
 
-def detect(input_data):
-    if input_data is None:
+def detect(data):
+    if data is None:
         st.error("Please submit a CSV file before detection")
     else:
         lr_model = pickle.load(open(
@@ -29,15 +29,17 @@ def detect(input_data):
         encoder = pickle.load(open('encoder.pkl', 'rb'))
         scaler = pickle.load(open('scaler.pkl', 'rb'))
 
-        input_data.columns = ['treatment_status', 'hain_rifampicin', 'social_risk_factors', 'rater',
+        data.columns = ['treatment_status', 'hain_rifampicin', 'social_risk_factors', 'rater',
                    'pleural_effusion_percent_of_hemithorax_involved', 'regimen_drug', 'gene_name', 'hain_isoniazid',
                    'smallnodules', 'isanynoncalcifiednoduleexist']
+        
+        input_data = data.copy(deep=True)
         input_data = encoder.transform(input_data)
         input_data = scaler.transform(input_data)
 
         result = lr_model.predict(input_data)
-        st.write(input_data)
-        st.write(result)
+        
+        output_data = data.assign(Outcome=result)
         
 #         output_data = input_data.assign(Outcome=[result])
 
@@ -47,7 +49,7 @@ def detect(input_data):
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
 
 if csv_file is not None:
-    input_data = pd.read_csv(csv_file)
+    data = pd.read_csv(csv_file)
 
 if st.button('Predict'):
-    detect(input_data)
+    detect(data)
