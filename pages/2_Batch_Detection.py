@@ -45,6 +45,18 @@ def detect(data):
         output_data['Outcome'] = output_data['Outcome'].map({0 : 'Cured', 1 : 'Died', 2 : 'Unknown'})
         
         st.write(output_data)
+        
+        csv = convert_df(output_data)
+        
+        st.download_button(
+            label='Download result as CSV',
+            data=csv,
+            file_name='Detection Result',
+            mime='text/csv'
+        )
+        
+def convert_df(df):
+    return df.to_csv().encode('utf-8')
        
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
