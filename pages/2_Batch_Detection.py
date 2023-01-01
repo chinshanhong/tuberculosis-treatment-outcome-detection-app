@@ -41,7 +41,7 @@ def detect(data):
         
         st.write(output_data)
         
-        simple_visualization(data)
+        simple_visualization(data['treatment_status'])
         
         csv = convert_df(output_data)
         
