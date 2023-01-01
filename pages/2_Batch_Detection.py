@@ -41,6 +41,8 @@ def detect(data):
         
         st.write(output_data)
         
+        simple_visualization(data)
+        
         csv = convert_df(output_data)
         
         st.download_button(
@@ -52,6 +54,9 @@ def detect(data):
         
 def convert_df(df):
     return df.to_csv(index=False)
+
+def simple_visualization(data):
+    st.bar_chart(data)
        
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
