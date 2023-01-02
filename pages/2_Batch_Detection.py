@@ -41,8 +41,6 @@ def detect(data):
         
         st.write(output_data)
         
-        st.write(data['treatment_status'].values_count())
-        
         csv = convert_df(output_data)
         
         st.download_button(
