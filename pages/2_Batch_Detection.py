@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import plotly.express px
 
 st.set_page_config(
     page_title='Tuberculosis Treatment Outcomes Detector',
@@ -42,6 +43,8 @@ def detect(data):
         st.write(output_data)
         
         csv = convert_df(output_data)
+        
+#         fig = px
         
         st.download_button(
             label='Download result as CSV',
