@@ -97,7 +97,7 @@ with st.form('Single Prediction', clear_on_submit=True):
         hain_isoniazid = st.selectbox('Please select the drug sensitivity test result of isoniazid',
                                       ['Resistant', 'Sensitive', 'Intermediate', 'Not Reported'])
 
-    submitted = st.form_submit_button("Predict")
+    submitted = st.form_submit_button("Detect")
 
     # Add input data into numpy array
     if submitted:
