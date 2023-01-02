@@ -46,7 +46,7 @@ def detect(data):
         
         treatment_outcome_count = output_data['Outcome'].value_counts()
         
-        st.write(treament_outcome_count['Outcome'])
+        st.write(treatment_outcome_count['Outcome'])
         
         
         st.download_button(
