@@ -44,7 +44,8 @@ def detect(data):
         
         csv = convert_df(output_data)
         
-#         fig = px
+        st.write(output_data['Outcome'].value_counts())
+        
         
         st.download_button(
             label='Download result as CSV',
