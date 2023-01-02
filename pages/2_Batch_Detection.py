@@ -44,7 +44,7 @@ def detect(data):
         
         csv = convert_df(output_data)
         
-        output_data = output_data['Outcome'].value_counts().rename_axis("Outcome").reset_index("Count")
+        output_data = output_data['Outcome'].value_counts().rename_axis("Outcome").reset_index("Count").copy(deep=True)
         
         st.write(output_data)
         
