@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import plotly.express as px
+import plotly.graph_objects as go
 
 st.set_page_config(
     page_title='Tuberculosis Treatment Outcomes Detector',
@@ -47,6 +47,14 @@ def detect(data):
         treatment_outcome_count = output_data['Outcome'].value_counts()
         
         st.write(treatment_outcome_count['Cured'])
+        
+        fig = go.Figure(data=[go.Pie(labels=['Cured', 'Died', 'Unknown'],
+                                     values=[treatment_outcome_count['Cured'], 
+                                             treatment_outcome_count['Died'], 
+                                             treatment_outcome_count['Unknown'])])
+        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20)
+                              
+        st.plotly_chart(fig, theme='streamlit')
         
         
         st.download_button(
