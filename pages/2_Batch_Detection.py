@@ -44,7 +44,9 @@ def detect(data):
         
         csv = convert_df(output_data)
         
-        st.write(output_data['Outcome'].value_counts())
+        output_data = output_data['Outcome'].value_counts().rename_axis("Outcome").reset_index("Count")
+        
+        st.write(output_data)
         
         
         st.download_button(
