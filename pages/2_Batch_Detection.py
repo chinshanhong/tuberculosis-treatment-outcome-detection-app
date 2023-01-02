@@ -48,7 +48,7 @@ def detect(data):
         
         fig = go.Figure(data=[go.Pie(labels=['Cured','Died','Unknown'],
                              values=[treatment_outcome_count['Cured'],treatment_outcome_count['Died'],treatment_outcome_count['Unknown']], hole=.3, 
-                                    testinfo='label+percent')])
+                                    textinfo='label+percent')])
                               
         st.plotly_chart(fig, theme='streamlit')
         
