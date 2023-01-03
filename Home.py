@@ -2,28 +2,34 @@ import streamlit as st
 
 st.set_page_config(
     page_title='Tuberculosis Treatment Outcomes Detector',
-    layout='centered'
+    layout='wide'
 )
 
 
-st.title("Home Page")
+st.title("Tuberculosis Treatment Outcome Detector User Manual")
 
 st.sidebar.success("Select a demo above.")
 
 st.markdown(
     """
-    Streamlit is an open-source app framework built specifically for
-    Machine Learning and Data Science projects.
-    **👈 Select a demo from the sidebar** to see some examples
-    of what Streamlit can do!
-    ### Want to learn more?
-    - Check out [streamlit.io](https://streamlit.io)
-    - Jump into our [documentation](https://docs.streamlit.io)
-    - Ask a question in our [community
-        forums](https://discuss.streamlit.io)
-    ### See more complex demos
-    - Use a neural net to [analyze the Udacity Self-driving Car Image
-        Dataset](https://github.com/streamlit/demo-self-driving)
-    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+    #### What is Tuberculosis Treatment Outcome Detector?
+    Tuberculosis Treatment Outcome Detector is a prototype used for detecting the treatment outcomes of tuberculosis
+    patients. 
+    #### How to use Tuberculosis Treatment Outcome Detector?
+    Users can enter the medical data of tuberculosis patients manually in the 'Single Detection' page or upload an
+    CSV file in the 'Batch Detection' page to detect the treatment outcome of their patients.
+    #### What machine learning model is used in the Tuberculosis Treatment Outcome Detector?
+    Logistic regression is used to predict the treatment outcomes of the tuberculosis patients.
+    #### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
+    The treatment outcome that will be assigned to the tuberculosis patients and its respective definitions are listed 
+    below.
+    | Treatment Outcome | Definition |
+    | ----------------- | ----------- |
+    | Cured             | Treatment completed as recommended by the national policy without evidence of failure AND three or more consecutive cultures taken at least 30 days apart are negative after the intensive phase |
+    | Died             | A patient who dies for any reason during the course of treatment. |
+    | Unknown             | A patient for whom no treatment outcome is assigned. (This includes cases “transferred out” to another treatment unit and whose treatment outcome is unknown). |
+    
+    #### Who developed Tuberculosis Treatment Outcome Detector?
+    This prototype is developed by Chin Shan Hong.
 """
 )
