@@ -17,8 +17,16 @@ st.markdown(
     """
     #### Important Note
     Before uploading your CSV file, please make sure that your CSV files have the following column headers and in the correct order.
-    1. Hello
-    2. Hi
+    1. Treatment Status
+    2. Hain Rifampicin
+    3. Social Risk Factors
+    4. Rater
+    5. Pleural Effusion Percent of Hemithorax Involved
+    6. Drug Regimen
+    7. Gene Name
+    8. Hain Isoniazid
+    9. Small Nodules
+    10. Calcified Nodules
     """
 )
 
