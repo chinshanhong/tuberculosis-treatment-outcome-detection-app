@@ -15,7 +15,7 @@ st.title('Batch Detection')
 
 st.markdown(
     """
-    
+    #### Important Note
     """
 )
 
