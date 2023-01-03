@@ -17,6 +17,8 @@ st.markdown(
     """
     #### Important Note
     Before uploading your CSV file, please make sure that your CSV files have the following column headers and in the correct order.
+    1. Hello
+    2. Hi
     """
 )
 
