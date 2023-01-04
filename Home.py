@@ -1,12 +1,12 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title='TB Outcomes Oracle :crystal_ball:',
+    page_title='TB Outcomes Oracle',
     layout='wide'
 )
 
 
-st.title("TB Outcomes Oracle User Manual")
+st.title("TB Outcomes Oracle :crystal_ball: User Manual")
 
 st.sidebar.success("Select a demo above.")
 
