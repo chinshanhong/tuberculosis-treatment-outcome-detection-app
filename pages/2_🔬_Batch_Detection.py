@@ -12,7 +12,7 @@ st.set_page_config(
 
 data = None;
 
-st.title('Batch Detection :microscope:')
+st.title('Batch Detection')
 
 st.markdown(
     """
