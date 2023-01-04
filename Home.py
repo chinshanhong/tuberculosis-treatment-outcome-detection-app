@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 
-st.title("TB Outcomes Oracle :crystal_ball: User Manual")
+st.title("TB Outcomes Oracle User Manual :book:")
 
 st.sidebar.success("Select a demo above.")
 
