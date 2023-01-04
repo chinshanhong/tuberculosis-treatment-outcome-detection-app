@@ -1,24 +1,24 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title='Tuberculosis Treatment Outcomes Detector',
+    page_title='TB Outcomes Oracle',
     layout='wide'
 )
 
 
-st.title("Tuberculosis Treatment Outcome Detector User Manual")
+st.title("TB Outcomes Oracle User Manual")
 
 st.sidebar.success("Select a demo above.")
 
 st.markdown(
     """
-    #### What is Tuberculosis Treatment Outcome Detector?
-    Tuberculosis Treatment Outcome Detector is a prototype used for detecting the treatment outcomes of tuberculosis
+    #### What is TB Outcomes Oracle?
+    TB Outcomes Oracle is a prototype used for detecting the treatment outcomes of tuberculosis
     patients. 
-    #### How to use Tuberculosis Treatment Outcome Detector?
+    #### How to use TB Outcomes Oracle?
     Users can enter the medical data of tuberculosis patients manually in the 'Single Detection' page or upload an
     CSV file in the 'Batch Detection' page to detect the treatment outcome of their patients.
-    #### What machine learning model is used in the Tuberculosis Treatment Outcome Detector?
+    #### What machine learning model is used in the TB Outcomes Oracle?
     Logistic regression is used to predict the treatment outcomes of the tuberculosis patients.
     #### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
     The treatment outcome that will be assigned to the tuberculosis patients and its respective definitions are listed 
@@ -29,7 +29,7 @@ st.markdown(
     | Died             | A patient who dies for any reason during the course of treatment. |
     | Unknown             | A patient for whom no treatment outcome is assigned. (This includes cases “transferred out” to another treatment unit and whose treatment outcome is unknown). |
     
-    #### Who developed Tuberculosis Treatment Outcome Detector?
+    #### Who developed TB Outcomes Oracle?
     This prototype is developed by Chin Shan Hong.
 """
 )
