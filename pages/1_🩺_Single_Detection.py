@@ -7,7 +7,7 @@ import pickle
 # from sklearn.linear_model import LogisticRegression
 # from category_encoders import CountEncoder
 
-st.set_page_config(layout="centered", page_title='Tuberculosis Treatment Outcomes Detector')
+st.set_page_config(layout="centered", page_title='TB Outcomes Oracle', page_icon='🔮')
 
 if 'result' not in st.session_state:
     st.session_state.result = 100
