@@ -5,8 +5,9 @@ import pickle
 import plotly.graph_objects as go
 
 st.set_page_config(
-    page_title='Tuberculosis Treatment Outcomes Detector',
-    layout='centered'
+    page_title='TB Outcomes Oracle',
+    layout='centered',
+    page_icon='🔮'
 )
 
 data = None;
