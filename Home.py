@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title='TB Outcomes Oracle',
+    page_title='TB Outcomes Oracle :crystal_ball:',
     layout='wide'
 )
 
