@@ -15,7 +15,7 @@ if 'result' not in st.session_state:
 if 'treatment_outcome' not in st.session_state:
     st.session_state.treatment_outcome = ''
 
-st.title("Single Detection")
+st.title("Single Detection :stethoscope:")
 
 col1, col2 = st.columns(2, gap='small')
 
