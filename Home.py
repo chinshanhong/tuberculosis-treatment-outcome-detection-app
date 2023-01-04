@@ -2,7 +2,8 @@ import streamlit as st
 
 st.set_page_config(
     page_title='TB Outcomes Oracle',
-    layout='wide'
+    layout='wide',
+    page_icon=':crystal_ball:'
 )
 
 
