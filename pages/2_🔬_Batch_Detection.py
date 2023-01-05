@@ -36,6 +36,8 @@ st.markdown(
 template = pd.DataFrame(columns=['Treatment Status', 'Hain Rifampicin', 'Social Risk Factors', 'Rater', 
                                  'Pleural Effusion Percent of Hemithorax Involved', 'Drug Regimen', 'Gene Name', 'Hain Isoniazid', 
                                  'Small Nodules', 'Calcified Nodules'])
+template = convert_df(template)
+
 st.download_button(
             label='Download templte CSV',
             data=template,
