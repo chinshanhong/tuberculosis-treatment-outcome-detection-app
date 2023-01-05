@@ -43,7 +43,7 @@ template = pd.DataFrame(columns=['Treatment Status', 'Hain Rifampicin', 'Social 
 template = convert_df(template)
 
 st.download_button(
-            label='Download templte CSV',
+            label='Download template CSV',
             data=template,
             file_name='Template',
             mime='text/csv'
