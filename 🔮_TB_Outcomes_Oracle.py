@@ -9,8 +9,6 @@ st.set_page_config(
 
 st.title("TB Outcomes Oracle User Manual :book:")
 
-st.sidebar.success("Select a demo above.")
-
 st.markdown(
     """
     #### What is TB Outcomes Oracle?
