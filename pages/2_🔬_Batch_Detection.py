@@ -51,8 +51,8 @@ def detect(data):
                         'hain_isoniazid',
                         'smallnodules', 'isanynoncalcifiednoduleexist']
         
-        data['hain_rifampicin'] = data['hain_rifampicin'].map({'Resistant': 'R', 'Sensitive': 'S'})
-        data['hain_isoniazid'] = data['hain_isoniazid'].map({'Resistant': 'R', 'Sensitive': 'S', 'Intermediate': 'I'})
+        data['hain_rifampicin'] = data['hain_rifampicin'].map({'Resistant': 'R', 'Sensitive': 'S', 'Not Reported': 'Not Reported'})
+        data['hain_isoniazid'] = data['hain_isoniazid'].map({'Resistant': 'R', 'Sensitive': 'S', 'Intermediate': 'I', 'Not Reported': 'Not Reported'})
 
         input_data = data.copy(deep=True)
         input_data = encoder.transform(input_data)
