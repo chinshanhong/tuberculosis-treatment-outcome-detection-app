@@ -50,6 +50,9 @@ def detect(data):
                         'pleural_effusion_percent_of_hemithorax_involved', 'regimen_drug', 'gene_name',
                         'hain_isoniazid',
                         'smallnodules', 'isanynoncalcifiednoduleexist']
+        
+        data['hain_rifampicin'] = data['hain_rifampicin'].map({'Resistant': 'R', 'Sensitive': 'S'})
+        data['hain_isoniazid'] = data['hain_isoniazid'].map({'Resistant': 'R', 'Sensitive': 'S'. 'Intermediate': 'I'})
 
         input_data = data.copy(deep=True)
         input_data = encoder.transform(input_data)
