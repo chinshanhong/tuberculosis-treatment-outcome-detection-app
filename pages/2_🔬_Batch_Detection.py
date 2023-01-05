@@ -17,7 +17,7 @@ st.title('Batch Detection')
 st.markdown(
     """
     #### Important Note
-    Before uploading your CSV file, please make sure that your CSV files have the following column headers and in the correct order. The list of accepted values for each column are listed in this document.
+    Before uploading your CSV file, please make sure that your CSV files have the following column headers and in the correct order. The list of accepted values for each column are listed in this [document](.
     1. Treatment Status
     2. Hain Rifampicin
     3. Social Risk Factors
