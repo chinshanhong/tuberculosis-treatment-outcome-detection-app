@@ -101,6 +101,12 @@ with st.form('Single Prediction', clear_on_submit=True):
 
     # Add input data into numpy array
     if submitted:
+        
+        if hain_rifampicin == 'Resistant':
+            hain_rifampicin = 'R'
+        elif hain_rifampicin == 'Sensitive':
+            hain_rifampicin = 'S'
+         
         st.write(hain_rifampicin)
         
         social_risk_factor_list = ', '.join(risk_factors)
