@@ -75,6 +75,8 @@ def detect(data):
                                      values=[treatment_outcome_count['Cured'], treatment_outcome_count['Died'],
                                              treatment_outcome_count['Unknown']], hole=.3,
                                      textinfo='label+percent')])
+        
+        fig.update_traces(marker=dict(colors=colors))
 
         st.plotly_chart(fig, theme='streamlit')
 
