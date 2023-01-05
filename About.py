@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 
-st.title("TB Outcomes Oracle User Manual :book:")
+st.title("TB Outcomes Oracle :crystal_ball:")
 
 st.markdown(
     """
