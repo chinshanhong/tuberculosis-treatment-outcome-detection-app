@@ -17,7 +17,8 @@ st.title('Batch Detection')
 st.markdown(
     """
     #### Important Note
-    Before uploading your CSV file, please make sure that your CSV files have the following column headers and in the correct order. 
+    Before uploading your CSV file, please make sure that your CSV files have the following column headers and in the correct order. You can download the CSV template below
+    to key in your TB patients' data.
     The list of accepted values for each column are listed in this [document](https://drive.google.com/file/d/1chvgeHxyZ5kwfyZL9UFcclYUyTHIUe-A/view?usp=sharing)
     1. Treatment Status
     2. Hain Rifampicin
