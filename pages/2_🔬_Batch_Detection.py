@@ -93,5 +93,5 @@ csv_file = st.file_uploader("Choose a CSV file", type='csv')
 if csv_file is not None:
     data = pd.read_csv(csv_file)
 
-if st.button('Predict'):
+if st.button('Detect'):
     detect(data)
