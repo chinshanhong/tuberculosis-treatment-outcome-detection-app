@@ -18,7 +18,7 @@ st.markdown(
     """
     #### Important Note
     Before uploading your CSV file, please make sure that your CSV files have the following column headers and in the correct order. 
-    The list of accepted values for each column are listed in this [document](https://github.com/chinshanhong/tuberculosis-treatment-outcome-detection-app/blob/main/List%20of%20Accepted%20Values.pdf)
+    The list of accepted values for each column are listed in this [document](https://drive.google.com/file/d/1chvgeHxyZ5kwfyZL9UFcclYUyTHIUe-A/view?usp=sharing)
     1. Treatment Status
     2. Hain Rifampicin
     3. Social Risk Factors
