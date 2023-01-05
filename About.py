@@ -6,20 +6,34 @@ st.set_page_config(
     page_icon="🔮"
 )
 
-
 st.title("TB Outcomes Oracle :crystal_ball:")
 
 st.markdown(
     """
-    #### What is TB Outcomes Oracle?
-    TB Outcomes Oracle is a prototype used for detecting the treatment outcomes of tuberculosis
-    patients. 
-    #### How to use TB Outcomes Oracle?
-    Users can enter the medical data of tuberculosis patients manually in the 'Single Detection' page or upload an
-    CSV file in the 'Batch Detection' page to detect the treatment outcome of their patients.
-    #### What machine learning model is used in the TB Outcomes Oracle?
-    Logistic regression is used to predict the treatment outcomes of the tuberculosis patients.
-    #### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
+    #### Introduction
+    Welcome to the main page of TB Outcomes Oracle. TB Outcomes Oracle is a prototype used for helping the medical staffs 
+    to detect the treatment outcomes of tuberculosis patients. **Logistic Regression** model is used as the detector 
+    in this web application. TB Outcomes Oracle consist of two major functionalities, which are **Single Detection** and 
+    **Batch Detection**. Users can enter the medical data of tuberculosis patients manually in the **Single Detection** 
+    page or upload a CSV file in the **Batch Detection** page to detect the treatment outcome of their patients.  
+    
+    #### User Manual
+    ##### Single Detection
+    1. Click the **Single Detection** page at the left sidebar.
+    2. Select the inputs for each question.
+    3. Click the **Detect** button.
+    4. View the detection result.
+    
+    ##### Batch Detection
+    1. Click the **Batch Detection** page at the left sidebar.
+    2. Upload a CSV file.
+    3. Click the **Detect** button.
+    4. View the detection results.
+    5. Download results as CSV.
+    
+    
+    #### Q&A
+    ##### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
     The treatment outcome that will be assigned to the tuberculosis patients and its respective definitions are listed 
     below.
     | Treatment Outcome | Definition |
@@ -28,7 +42,10 @@ st.markdown(
     | Died             | A patient who dies for any reason during the course of treatment. |
     | Unknown             | A patient for whom no treatment outcome is assigned. (This includes cases “transferred out” to another treatment unit and whose treatment outcome is unknown). |
     
-    #### Who developed TB Outcomes Oracle?
-    This prototype is developed by Chin Shan Hong.
+    ##### How to access the TB Outcomes Oracle
+    Users can access the TB Outcomes Oracle with personal computers or mobile phones.
+
+    ##### Who developed TB Outcomes Oracle?
+    This prototype is developed by Chin Shan Hong as a Data Science Project.
 """
 )
