@@ -33,6 +33,10 @@ st.markdown(
     """
 )
 
+def convert_df(df):
+    return df.to_csv(index=False)
+
+
 template = pd.DataFrame(columns=['Treatment Status', 'Hain Rifampicin', 'Social Risk Factors', 'Rater', 
                                  'Pleural Effusion Percent of Hemithorax Involved', 'Drug Regimen', 'Gene Name', 'Hain Isoniazid', 
                                  'Small Nodules', 'Calcified Nodules'])
@@ -98,11 +102,6 @@ def detect(data):
             file_name='Detection Result',
             mime='text/csv'
         )
-
-
-def convert_df(df):
-    return df.to_csv(index=False)
-
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
 
