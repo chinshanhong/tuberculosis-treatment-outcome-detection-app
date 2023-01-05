@@ -106,8 +106,13 @@ with st.form('Single Prediction', clear_on_submit=True):
             hain_rifampicin = 'R'
         elif hain_rifampicin == 'Sensitive':
             hain_rifampicin = 'S'
-         
-        st.write(hain_rifampicin)
+            
+        if hain_isoniaizid == 'Resistant':
+            hain_isoniaizid = 'R'
+        elif hain_isoniaizid == 'Sensitive':
+            hain_isoniaizid = 'S'
+        elif hain_isoniaizid == 'Intermediate':
+            hain_isoniaizid = 'I'
         
         social_risk_factor_list = ', '.join(risk_factors)
 
