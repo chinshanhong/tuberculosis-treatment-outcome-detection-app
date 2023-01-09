@@ -7,7 +7,7 @@ st.set_page_config(
     page_icon="🔮"
 )
 
-st.title("Tuberculosis Treament Outcomes Oracle :crystal_ball:")
+st.title("TB Outcomes Oracle :crystal_ball:")
 
 st.markdown(
     """
