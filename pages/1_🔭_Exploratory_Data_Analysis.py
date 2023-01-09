@@ -8,7 +8,7 @@ st.set_page_config(layout="wide", page_title='TB Outcomes Oracle', page_icon='ðŸ
 st.title("Exploratory Data Analysis")
 
 st.markdown("""
-    You can upload your TB medical data here and explore it with our tools!
+    You can upload your TB medical data of yout TB patients here and explore it with our tools!
 """)
 
 data = None
