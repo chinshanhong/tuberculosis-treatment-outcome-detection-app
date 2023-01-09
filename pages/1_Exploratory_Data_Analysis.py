@@ -14,9 +14,11 @@ st.markdown("""
 data = None
 
 def explore(data):
-    pr = data.profile_report()
-    st_profile_report(pr)
-
+    if data is None:
+        st.error("Please submit a CSV file before detection")
+    else:
+        pr = data.profile_report()
+        st_profile_report(pr)
 
 uploaded_file = st.file_uploader("Choose a CSV file", type='csv')
 if uploaded_file is not None:
