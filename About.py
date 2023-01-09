@@ -27,7 +27,7 @@ st.markdown(
      """
 )
 
-video_file = open("What makes tuberculosis (TB) the world's most infectious killer - Melvin Sanicas", 'rb')
+video_file = open("What makes tuberculosis (TB) the world's most infectious killer - Melvin Sanicas.mp4", 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 
