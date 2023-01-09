@@ -37,7 +37,7 @@ with col1:
 
 st.markdown("""
     
-    ##### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
+    #### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
     The treatment outcome that will be assigned to the tuberculosis patients and its respective definitions are listed 
     below.
     | Treatment Outcome | Definition |
