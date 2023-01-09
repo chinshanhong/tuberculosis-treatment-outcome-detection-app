@@ -14,8 +14,9 @@ st.markdown(
     #### Introduction
     Welcome to the main page of TB Outcomes Oracle. TB Outcomes Oracle is a prototype used for helping the medical staffs 
     to detect the treatment outcomes of tuberculosis patients. **Logistic Regression** model is used as the detector 
-    in this web application. TB Outcomes Oracle consist of two major functionalities, which are **Single Detection** and 
-    **Batch Detection**. Users can enter the medical data of tuberculosis patients manually in the **Single Detection** 
+    in this web application. TB Outcomes Oracle consist of three major functionalities, which are **Exploratory Data Analysis**, **Single Detection** and 
+    **Batch Detection**. Users can upload their dataset that contains treatment data of their TB patients and explore it in the **Exploratory Data Analysis** page 
+    Users can enter the medical data of tuberculosis patients manually in the **Single Detection** 
     page or upload a CSV file in the **Batch Detection** page to detect the treatment outcome of their patients.  
     
     #### What is Tuberculosis? 
