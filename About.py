@@ -1,5 +1,4 @@
 import streamlit as st
-import pywedge as pw
 import pandas as pd
 
 st.set_page_config(
@@ -52,7 +51,3 @@ st.markdown(
 """
 )
 
-train = pd.read_csv("TB_Portals_Patient_Cases_January_2022_1.9.2022.csv")
-mc = pw.Pywedge_Charts(train, c=None, y = 'treatment_status')
-mc.make_charts()
-st.write(mc)
