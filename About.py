@@ -19,7 +19,7 @@ st.markdown(
     page or upload a CSV file in the **Batch Detection** page to detect the treatment outcome of their patients.  
     
     #### What is Tuberculosis? 
-    Tuberlosis (TB) is a deadly and infectious disease caused by the infection of Mycobacterium tuberculosis (Mtb). Mtb is airbone and can be spread when people inhaled 
+    Tuberlosis (TB) is a deadly and infectious disease caused by the infection of *Mycobacterium tuberculosis* (Mtb). Mtb is airbone and can be spread when people inhaled 
     the Mtb spores released by persons infected with TB through coughing or speaking. Tuberculosis patients tend to experience symptoms such as weight loss, fever, night sweats,
      weakness, chest pain, and coughing blood.
     
