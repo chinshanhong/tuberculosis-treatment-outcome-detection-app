@@ -15,7 +15,7 @@ data = None
 
 def explore(data):
     if data is None:
-        st.error("Please submit a CSV file before detection")
+        st.error("Please submit a CSV file before exploration")
     else:
         pr = data.profile_report()
         st_profile_report(pr)
