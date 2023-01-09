@@ -58,7 +58,7 @@ with st.form('Single Prediction', clear_on_submit=True):
                                        'Moxifloxacin', 'Pretomanid', 'Aminoglycosides - injectible agents',
                                        'Ofloxacin', 'Amikacin', 'Ethionamide', 'Terizidone',
                                        'Antiretroviral therapy', 'Cotrimoxazol preventive', 'Clarithromycin',
-                                       'Fluoroquinolones', 'Not Reported'], ['Not Reported'])
+                                       'Fluoroquinolones', 'Not Reported'])
 
     with col2:
         # Sixth widget to select the location of small nodules that the patient is taking
