@@ -26,10 +26,14 @@ st.markdown(
      #### Video About Tuberculosis Facts
      """
 )
+col1, col2 = st.columns(2)
 
 video_file = open("What makes tuberculosis (TB) the world's most infectious killer - Melvin Sanicas.mp4", 'rb')
 video_bytes = video_file.read()
-st.video(video_bytes)
+
+with col1: 
+    st.video(video_bytes)
+
 
 st.markdown("""
     
