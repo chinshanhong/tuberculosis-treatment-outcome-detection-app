@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import pandas_profilling
 from streamlit_pandas_profiling import st_profile_report
 
 st.set_page_config(layout="centered", page_title='TB Outcomes Oracle', page_icon='🔮')
