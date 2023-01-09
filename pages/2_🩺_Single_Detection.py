@@ -40,8 +40,7 @@ with st.form('Single Prediction', clear_on_submit=True):
                                       ['Current smoker', 'Documented MDR contact', 'Patient alcohol abuse',
                                        'Ex prisoner', 'TB care worker', 'Homeless', 'Worked abroad',
                                        'Patient drug abuse', 'Immigrants', 'refugees', 'internal migrants',
-                                       'Not Reported'],
-                                      ['Not Reported'])
+                                       'Not Reported'])
 
         # Fourth widget to select the pleural effusion percent of hemithorax involved
         pleural_effusion_percent = st.selectbox('Please select the pleural effusion percent of hemithorax',
@@ -68,8 +67,7 @@ with st.form('Single Prediction', clear_on_submit=True):
                                         'Middle Left Sextant-Yes', 'Middle Right Sextant-Yes', 'Upper Left Sextant-Yes',
                                         'Upper Right Sextant-Yes', 'Middle Left Sextant-No', 'Middle Right Sextant-No',
                                         'Upper Left Sextant-No', 'Upper Right Sextant-No', 'Lower Right Sextant-No',
-                                        'None', 'Not Reported'],
-                                       ['Not Reported'])
+                                        'None', 'Not Reported'])
 
         # Seventh widget to select the location of small nodules that the patient is taking
         calcified_nodules = st.multiselect('Does calcified nodules exist?',
@@ -80,14 +78,12 @@ with st.form('Single Prediction', clear_on_submit=True):
                                             'Upper Right Sextant-Yes', 'Middle Left Sextant-No',
                                             'Middle Right Sextant-No',
                                             'Upper Left Sextant-No', 'Upper Right Sextant-No', 'Lower Right Sextant-No',
-                                            'None', 'Not Reported'],
-                                           ['Not Reported'])
+                                            'None', 'Not Reported'])
 
         # Eight widget to select the gene name
         gene_name = st.multiselect("Please select your patient's genomic sequence",
                                    ['katG', 'rpoB', 'rpsL', 'embB', 'inhA-Pro',
-                                    'gyrA', 'rrs', 'pncA', 'inhA', 'Not Reported'],
-                                   ['Not Reported'])
+                                    'gyrA', 'rrs', 'pncA', 'inhA', 'Not Reported'])
 
         # Ninth widget to select the result of drug sensitivity test
         hain_rifampicin = st.selectbox('Please select the drug sensitivity test result of rifampicin',
