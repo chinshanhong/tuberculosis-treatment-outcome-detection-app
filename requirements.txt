@@ -2,3 +2,4 @@ scikit-learn==1.2.0
 category-encoders==2.5.1.post0
 plotly==5.11.0
 pywedge==0.5.1.8
+Ipython==8.8.0
