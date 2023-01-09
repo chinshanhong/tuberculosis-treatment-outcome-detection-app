@@ -54,4 +54,5 @@ st.markdown(
 
 train = pd.read_csv("TB_Portals_Patient_Cases_January_2022_1.9.2022.csv")
 mc = pw.Pywedge_Charts(train, c=None, y = 'treatment_status')
-st.write(mc)
+charts = mc.make_charts()
+st.write(charts)
