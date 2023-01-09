@@ -7,7 +7,7 @@ st.set_page_config(
     page_icon="🔮"
 )
 
-st.title("TB Outcomes Oracle :crystal_ball:")
+st.title("Tuberculosis Treament Outcomes Oracle :crystal_ball:")
 
 st.markdown(
     """
@@ -18,18 +18,9 @@ st.markdown(
     **Batch Detection**. Users can enter the medical data of tuberculosis patients manually in the **Single Detection** 
     page or upload a CSV file in the **Batch Detection** page to detect the treatment outcome of their patients.  
     
-    #### User Manual
-    ##### Single Detection
-    1. Click the **Single Detection** page at the left sidebar.
-    2. Select the inputs for each question.
-    3. Click the **Detect** button.
-    4. View the detection result.
+    #### What is Tuberculosis? 
     
-    ##### Batch Detection
-    1. Click the **Batch Detection** page at the left sidebar.
-    2. Upload a CSV file.
-    3. Click the **Detect** button.
-    4. View the detection results.
+    
     5. Download results as CSV.
     
     
@@ -43,11 +34,6 @@ st.markdown(
     | Died             | A patient who dies for any reason during the course of treatment. |
     | Unknown             | A patient for whom no treatment outcome is assigned. (This includes cases “transferred out” to another treatment unit and whose treatment outcome is unknown). |
     
-    ##### How to access the TB Outcomes Oracle
-    Users can access the TB Outcomes Oracle with personal computers or mobile phones.
-
-    ##### Who developed TB Outcomes Oracle?
-    This prototype is developed by Chin Shan Hong as a Data Science Project.
 """
 )
 
