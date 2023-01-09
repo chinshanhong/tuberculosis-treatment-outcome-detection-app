@@ -22,7 +22,16 @@ st.markdown(
     Tuberlosis (TB) is a deadly and infectious disease caused by the infection of *Mycobacterium tuberculosis* (Mtb). Mtb is airbone and can be spread when people inhaled 
     the Mtb spores released by persons infected with TB through coughing or speaking. Tuberculosis patients tend to experience symptoms such as weight loss, fever, night sweats,
      weakness, chest pain, and coughing blood.
-   
+     
+     #### Video About Tuberculosis Facts
+     """
+)
+
+video_file = open("What makes tuberculosis (TB) the world's most infectious killer - Melvin Sanicas", 'rb')
+video_bytes = video_file.read()
+st.video(video_bytes)
+
+st.markdown("""
     
     #### Q&A
     ##### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
