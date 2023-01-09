@@ -51,3 +51,6 @@ st.markdown(
     This prototype is developed by Chin Shan Hong as a Data Science Project.
 """
 )
+
+train = pd.read_csv("TB_Portals_Patient_Cases_January_2022_1.9.2022.csv")
+mc = pw.Pywedge_Charts(train, c=None, y = 'Attrition')
