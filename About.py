@@ -22,9 +22,7 @@ st.markdown(
     Tuberlosis (TB) is a deadly and infectious disease caused by the infection of *Mycobacterium tuberculosis* (Mtb). Mtb is airbone and can be spread when people inhaled 
     the Mtb spores released by persons infected with TB through coughing or speaking. Tuberculosis patients tend to experience symptoms such as weight loss, fever, night sweats,
      weakness, chest pain, and coughing blood.
-    
-    5. Download results as CSV.
-    
+   
     
     #### Q&A
     ##### What are the treatment outcomes that will be assigned to the tuberculosis patients when using this detector?
