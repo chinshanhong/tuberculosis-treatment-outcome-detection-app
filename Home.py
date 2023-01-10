@@ -48,7 +48,7 @@ st.markdown("""
     | Unknown             | A patient for whom no treatment outcome is assigned. (This includes cases “transferred out” to another treatment unit and whose treatment outcome is unknown). |
     
     #### User Manual
-    To read the user manual on how to use the TB Outcomes Oracle, please read the [TB Outcomes Oracle User Manual](https://drive.google.com/file/d/13Q-lUBe5uA9yyu1syBOolFjgnlo-OoKq/view?usp=sharing).
+    To undertstnad how to use the TB Outcomes Oracle in details, please read the [TB Outcomes Oracle User Manual](https://drive.google.com/file/d/13Q-lUBe5uA9yyu1syBOolFjgnlo-OoKq/view?usp=sharing).
     
 """
 )
