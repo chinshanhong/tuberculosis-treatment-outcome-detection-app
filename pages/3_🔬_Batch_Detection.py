@@ -51,59 +51,64 @@ st.download_button(
 
 def detect(data):
     if data is None:
-        st.error("Please submit a CSV file before detection")
-    elif data.empty:
-        st.error("Please key in your medical data before detection")
-    else:
-        st.markdown("## Detection Results Preview")
+        st.error("Please submit a CSV file before exploration")
+    elif data is not None:
+        empty_columns = []
+        for column in data.columns:
+            if data[column].isnull().values.any():
+                empty_columns.append(column)
+        if len(empty_columns) != 0:
+            st.error(f"Your TB medical data have empty column(s) {empty_columns}. Please fill in all the columns before exploration.")
+        else:
+            st.markdown("## Detection Results Preview")
 
-        lr_model = pickle.load(open(
-            'lr_model.pkl',
-            'rb'))
+            lr_model = pickle.load(open(
+                'lr_model.pkl',
+                'rb'))
 
-        encoder = pickle.load(open('encoder.pkl', 'rb'))
-        scaler = pickle.load(open('scaler.pkl', 'rb'))
+            encoder = pickle.load(open('encoder.pkl', 'rb'))
+            scaler = pickle.load(open('scaler.pkl', 'rb'))
 
-        data.columns = ['treatment_status', 'hain_rifampicin', 'social_risk_factors', 'rater',
-                        'pleural_effusion_percent_of_hemithorax_involved', 'regimen_drug', 'gene_name',
-                        'hain_isoniazid',
-                        'smallnodules', 'isanynoncalcifiednoduleexist']
-        
-        data['hain_rifampicin'] = data['hain_rifampicin'].map({'Resistant': 'R', 'Sensitive': 'S', 'Not Reported': 'Not Reported'})
-        data['hain_isoniazid'] = data['hain_isoniazid'].map({'Resistant': 'R', 'Sensitive': 'S', 'Intermediate': 'I', 'Not Reported': 'Not Reported'})
+            data.columns = ['treatment_status', 'hain_rifampicin', 'social_risk_factors', 'rater',
+                            'pleural_effusion_percent_of_hemithorax_involved', 'regimen_drug', 'gene_name',
+                            'hain_isoniazid',
+                            'smallnodules', 'isanynoncalcifiednoduleexist']
 
-        input_data = data.copy(deep=True)
-        input_data = encoder.transform(input_data)
-        input_data = scaler.transform(input_data)
+            data['hain_rifampicin'] = data['hain_rifampicin'].map({'Resistant': 'R', 'Sensitive': 'S', 'Not Reported': 'Not Reported'})
+            data['hain_isoniazid'] = data['hain_isoniazid'].map({'Resistant': 'R', 'Sensitive': 'S', 'Intermediate': 'I', 'Not Reported': 'Not Reported'})
 
-        result = lr_model.predict(input_data)
+            input_data = data.copy(deep=True)
+            input_data = encoder.transform(input_data)
+            input_data = scaler.transform(input_data)
 
-        output_data = data.assign(Outcome=result)
-        output_data['Outcome'] = output_data['Outcome'].map({0: 'Cured', 1: 'Died', 2: 'Unknown'})
+            result = lr_model.predict(input_data)
 
-        st.write(output_data)
+            output_data = data.assign(Outcome=result)
+            output_data['Outcome'] = output_data['Outcome'].map({0: 'Cured', 1: 'Died', 2: 'Unknown'})
 
-        csv = convert_df(output_data)
+            st.write(output_data)
 
-        treatment_outcome_count = output_data['Outcome'].value_counts()
+            csv = convert_df(output_data)
 
-        colors = ['mediumturquoise', 'darkorange', 'lightgreen']
-        
-        fig = go.Figure(data=[go.Pie(labels=['Cured', 'Died', 'Unknown'],
-                                     values=[treatment_outcome_count['Cured'], treatment_outcome_count['Died'],
-                                             treatment_outcome_count['Unknown']], hole=.3,
-                                     textinfo='label+percent')])
-        
-        fig.update_traces(marker=dict(colors=colors))
+            treatment_outcome_count = output_data['Outcome'].value_counts()
 
-        st.plotly_chart(fig, theme='streamlit')
+            colors = ['mediumturquoise', 'darkorange', 'lightgreen']
 
-        st.download_button(
-            label='Download result as CSV',
-            data=csv,
-            file_name='Detection Result.csv',
-            mime='text/csv'
-        )
+            fig = go.Figure(data=[go.Pie(labels=['Cured', 'Died', 'Unknown'],
+                                         values=[treatment_outcome_count['Cured'], treatment_outcome_count['Died'],
+                                                 treatment_outcome_count['Unknown']], hole=.3,
+                                         textinfo='label+percent')])
+
+            fig.update_traces(marker=dict(colors=colors))
+
+            st.plotly_chart(fig, theme='streamlit')
+
+            st.download_button(
+                label='Download result as CSV',
+                data=csv,
+                file_name='Detection Result.csv',
+                mime='text/csv'
+            )
 
 csv_file = st.file_uploader("Choose a CSV file", type='csv')
 
