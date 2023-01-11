@@ -58,7 +58,7 @@ def detect(data):
             if data[column].isnull().values.any():
                 empty_columns.append(column)
         if len(empty_columns) != 0:
-            st.error(f"Your TB medical data have empty column(s) {empty_columns}. Please fill in all the columns before exploration.")
+            st.error(f"Your TB medical data have empty column(s) {empty_columns}. Please fill in all the columns before detection.")
         else:
             st.markdown("## Detection Results Preview")
 
