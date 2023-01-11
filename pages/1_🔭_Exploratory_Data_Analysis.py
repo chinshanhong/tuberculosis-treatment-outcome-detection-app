@@ -15,7 +15,7 @@ data = None
 
 def explore(data):
     for column in data.columns:
-        if data[column].isna():
+        if len(data[column].values):
             st.write("Empty")
     if data is None:
         st.error("Please submit a CSV file before exploration")
