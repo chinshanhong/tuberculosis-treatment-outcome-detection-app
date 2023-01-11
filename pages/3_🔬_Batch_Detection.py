@@ -101,7 +101,7 @@ def detect(data):
         st.download_button(
             label='Download result as CSV',
             data=csv,
-            file_name='Detection Result',
+            file_name='Detection Result.csv',
             mime='text/csv'
         )
 
