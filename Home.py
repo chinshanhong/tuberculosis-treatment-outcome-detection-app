@@ -24,7 +24,7 @@ st.markdown(
     the Mtb spores released by persons infected with TB through coughing or speaking. Tuberculosis patients tend to experience symptoms such as weight loss, fever, night sweats,
      weakness, chest pain, and coughing blood.
      
-     #### Video About Tuberculosis Facts
+     #### Video about tuberculosis facts
      """
 )
 col1, col2 = st.columns(2)
