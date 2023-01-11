@@ -15,7 +15,7 @@ data = None
 
 def explore(data):
     for column in data.columns:
-        st.write(column)
+        st.write(data[column])
         if len(data[column].values) == 0:
             st.write("Empty")
 #     if data is None:
