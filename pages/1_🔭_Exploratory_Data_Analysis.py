@@ -14,10 +14,7 @@ st.markdown("""
 data = None
 
 def explore(data):
-    empty_columns = []
-    for column in data.columns:
-        if data[column].isnull().values.any():
-            empty_columns.append(column)
+    
     if data is None:
         st.error("Please submit a CSV file before exploration")
     elif data is not None:
