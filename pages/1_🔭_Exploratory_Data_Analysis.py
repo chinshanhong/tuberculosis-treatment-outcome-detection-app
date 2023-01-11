@@ -18,14 +18,18 @@ def explore(data):
     for column in data.columns:
         if data[column].isnull().values.any():
             empty_columns.append(column)
-        st.write(f"Your TB medical data have empty column(s) {empty_columns}. Please fill in all the columns before exploration.")
-#     if data is None:
-#         st.error("Please submit a CSV file before exploration")
-#     elif data.empty:
-#         st.error("Please key in your medical data before exploration")
-#     else:
-#         pr = data.profile_report()
-#         st_profile_report(pr)
+    if data is None:
+        st.error("Please submit a CSV file before exploration")
+    elif data is not None:
+        empty_columns = []
+        for column in data.columns:
+            if data[column].isnull().values.any():
+                empty_columns.append(column)
+        if len(empty_columns) == 0:
+            st.error(f"Your TB medical data have empty column(s) {empty_columns}. Please fill in all the columns before exploration.")
+        else:
+            pr = data.profile_report()
+            st_profile_report(pr)
 
 uploaded_file = st.file_uploader("Choose a CSV file", type='csv')
 if uploaded_file is not None:
