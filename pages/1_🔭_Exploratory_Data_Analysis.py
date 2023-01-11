@@ -14,10 +14,11 @@ st.markdown("""
 data = None
 
 def explore(data):
+    empty_columns = []
     for column in data.columns:
-        st.write(data[column])
         if data[column].isnull().values.any():
-            st.write("Empty")
+            empty_columns.append(column)
+        st.write(f"Your TB medical data have empty column(s) {empty_columns}. Please fill in all the columns before exploration.")
 #     if data is None:
 #         st.error("Please submit a CSV file before exploration")
 #     elif data.empty:
