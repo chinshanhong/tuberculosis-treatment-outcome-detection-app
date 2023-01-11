@@ -52,6 +52,8 @@ st.download_button(
 def detect(data):
     if data is None:
         st.error("Please submit a CSV file before detection")
+    elif data.empty:
+        st.error("Please key in your medical data before detection")
     else:
         st.markdown("## Detection Results Preview")
 
