@@ -16,6 +16,8 @@ data = None
 def explore(data):
     if data is None:
         st.error("Please submit a CSV file before exploration")
+    elif data.empty:
+        st.error("Please key in your medical data before exploration")
     else:
         pr = data.profile_report()
         st_profile_report(pr)
