@@ -45,7 +45,7 @@ template = convert_df(template)
 st.download_button(
             label='Download template CSV',
             data=template,
-            file_name='Template',
+            file_name='Template.csv',
             mime='text/csv'
         )
 
