@@ -22,7 +22,7 @@ def explore(data):
         for column in data.columns:
             if data[column].isnull().values.any():
                 empty_columns.append(column)
-        if len(empty_columns) == 0:
+        if len(empty_columns) != 0:
             st.error(f"Your TB medical data have empty column(s) {empty_columns}. Please fill in all the columns before exploration.")
         else:
             pr = data.profile_report()
