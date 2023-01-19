@@ -29,7 +29,7 @@ st.markdown(
     7. Gene Name
     8. Hain Isoniazid
     9. Small Nodules
-    10. Calcified Nodules
+    10. Non-Calcified Nodules
     """
 )
 
