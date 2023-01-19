@@ -39,7 +39,7 @@ def convert_df(df):
 
 template = pd.DataFrame(columns=['Treatment Status', 'Hain Rifampicin', 'Social Risk Factors', 'Rater', 
                                  'Pleural Effusion Percent of Hemithorax Involved', 'Drug Regimen', 'Gene Name', 'Hain Isoniazid', 
-                                 'Small Nodules', 'Calcified Nodules'])
+                                 'Small Nodules', 'Non-Calcified Nodules'])
 template = convert_df(template)
 
 st.download_button(
