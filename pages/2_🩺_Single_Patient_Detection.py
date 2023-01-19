@@ -70,7 +70,7 @@ with st.form('Single Prediction', clear_on_submit=True):
                                         'None', 'Not Reported'])
 
         # Seventh widget to select the location of small nodules that the patient is taking
-        calcified_nodules = st.multiselect('Does calcified nodules exist?',
+        non_calcified_nodules = st.multiselect('Does any non-calcified nodules exist?',
                                            ['Lower Left Sextant-Yes', 'Lower Left Sextant-No',
                                             'Lower Right Sextant-Yes',
                                             'Middle Left Sextant-Yes', 'Middle Right Sextant-Yes',
@@ -118,7 +118,7 @@ with st.form('Single Prediction', clear_on_submit=True):
 
         small_nodules_list = ', '.join(small_nodules)
 
-        calcified_nodules_list = ', '.join(calcified_nodules)
+        non_calcified_nodules_list = ', '.join(non_calcified_nodules)
 
         input_data = {
             'treatment_status': [treatment_status],
@@ -130,7 +130,7 @@ with st.form('Single Prediction', clear_on_submit=True):
             'gene_name': [gene_name_list],
             'hain_isoniazid': [hain_isoniazid],
             'smallnodules': [small_nodules_list],
-            'isanynoncalcifiednoduleexist': [calcified_nodules_list]
+            'isanynoncalcifiednoduleexist': [non_calcified_nodules_list]
         }
 
         df = pd.DataFrame(input_data)
